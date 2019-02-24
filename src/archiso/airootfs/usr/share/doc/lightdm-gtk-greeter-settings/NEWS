@@ -1,0 +1,45 @@
+20.09.2017, Version 1.2.2
+  - Bugs Fixed:
+    - Support gtk-3.* themes (LP: #1709864)
+    - Fixes grammar errors (do to does) (LP: #1576415)
+    - Use /bin/bash shebang in pkexec (LP: #1613967)
+    - Patch setup.py to create installation config reproducibly 
+      (Debian: #804081)
+    - Fixed typos in source files
+  - New Translations:
+    - Breton, Czech, Danish, Italian, Kazakh, Swedish
+  - Updated Translations:
+    - Arabic, Brazilian Portuguese, Catalan, Chinese (Simplified), 
+      Croatian, Dutch, Finnish, French, German, Greek, Japanese, 
+      Lithuanian, Polish, Portuguese, Russian, Serbian, Spanish
+
+07.04.2016, Version 1.2.1
+ - Updated Translations:
+   - Arabic, Brazilian Portuguese, Catalan, Chinese (Simplified), 
+     Croatian, Dutch, Finnish, French, German, Greek, Japanese, 
+     Lithuanian, Polish, Portuguese, Russian, Serbian, Spanish
+
+20.05.2015, Version 1.2
+
+ - Greeter version: 2.0.1
+ - New Features:
+   - xembed mode: run app without privelages if pkexec failed
+   - New Multihead setup dialog
+   - Support of multiple configuration files (lightdm-gtk-greeter 2.0.1)
+ - Bugs Fixed:
+   - Infinite loop in IndicatorsEntry (LP: #1435635)
+   - Table column title hard to understand (LP: #1428224)
+ - New Translations:
+   - Arabic, Brazilian Portuguese, Catalan, Croatian, Finnish, French, German,
+     Japanese, Lithuanian, Polish, Portuguese, Serbian, Spanish
+ - Updated Translations:
+   - Russian
+
+16.02.2015, Version 1.1
+
+ - Greeter version: 2.0.
+
+20.03.2014, Version 1.0
+
+ - Initial release.
+ 

@@ -1,0 +1,43 @@
+# KEY DEFINITIONS TO REMEMBER
+
+# $Mod = WINDOWS key or Super key or Mod4
+# Mod1 = ALT key
+# Control = CTRL key
+# Shift = SHIFT key
+# Escape = ESCAPE key
+# Return = ENTER or RETURN key
+# KP_Enter = Keypad Enter
+# Pause = PAUSE key
+# Print = PRINT key
+# Tab = TAB key
+
+# set Super key
+set $mod Mod4
+
+
+# define the movements keys - variables
+set $up l
+set $down k
+set $left j
+set $right semicolon
+
+
+# my current screen setup
+set $firstMonitor HDMI1
+set $secondMonitor eDP1
+
+
+# orientation for new workspaces
+default_orientation horizontal
+
+font pango:Noto Mono Regular 13
+
+# Settings for I3 next gap git
+# https://github.com/Airblader/i3/tree/gaps-next
+
+for_window [class="^.*"] border pixel 1
+gaps inner 10
+gaps outer 5
+#smart_gaps on
+#smart_borders on
+

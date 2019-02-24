@@ -1,0 +1,201 @@
+
+# rofi
+bindsym mod1+F2 exec --no-startup-id rofi -show run -font "Noto Sans 13"
+
+# xfce-appfinder
+bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
+
+# exit, logoff, suspend, ...
+bindsym Mod4+X mode "$mode_system"
+
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# reload the configuration file
+bindsym $mod+Shift+c exec "sh ~/.config/i3/scripts/reload-i3.sh"
+
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+#not workspace related
+
+bindsym control+shift+v exec --no-startup-id xfce4-popup-clipman-actions
+
+# terminal
+bindsym $mod+Return exec --no-startup-id termite;focus
+bindsym $mod+KP_Enter exec --no-startup-id termite;focus
+bindsym control+mod1+t exec --no-startup-id termite; focus
+bindsym control+mod1+Return exec --no-startup-id termite; focus
+bindsym control+mod1+KP_Enter exec --no-startup-id termite; focus
+
+#System monitor
+bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
+bindsym control+mod1+Delete exec --no-startup-id xfce4-taskmanager;focus
+
+#settings
+bindsym control+mod1+m exec --no-startup-id xfce4-settings-manager
+
+#catfish
+bindsym control+mod1+c exec --no-startup-id catfish;focus
+
+# pavucontrol
+bindsym control+mod1+u exec --no-startup-id pavucontrol
+
+# xfce-appfinder
+bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
+
+#pamac-manager
+bindsym control+mod1+p exec --no-startup-id pamac-manager
+
+#xkill
+bindsym --release $mod+Escape exec xkill
+
+#
+# i3
+#
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+
+## Moving around in i3
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+# next/previous workspace
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
+
+#navigate workspaces next / previous
+bindsym Mod1+Ctrl+Right workspace next
+bindsym Mod1+Ctrl+Left workspace prev
+
+## Tiling parameters 
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+#workspace related
+
+#workspace 1 related
+bindsym $mod+F1 exec --no-startup-id exo-open --launch webbrowser;focus
+bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser;focus
+
+#workspace 2 related
+bindsym $mod+F2 exec --no-startup-id code;focus
+
+#workspace 3 related
+# bindsym $mod+F3 exec --no-startup-id inkscape;focus
+
+#workspace 4 related
+# bindsym $mod+F4 exec --no-startup-id gimp;focus
+
+#workspace 5 related
+bindsym $mod+F5 exec --no-startup-id meld;focus
+bindsym control+mod1+i exec --no-startup-id nitrogen;focus
+
+#workspace 6 related
+bindsym $mod+F6 exec --no-startup-id vlc;focus
+
+#workspace 7 related
+bindsym $mod+F7 exec --no-startup-id virtualbox;focus
+
+#workspace 8 related
+bindsym $mod+F8 exec --no-startup-id thunar;focus
+bindsym $mod+Shift+Return exec --no-startup-id thunar;focus
+bindsym $mod+Shift+KP_Enter exec --no-startup-id thunar;focus
+bindsym control+mod1+b exec --no-startup-id thunar;focus
+
+#workspace 9 related
+
+
+#workspace 10 related
+# bindsym $mod+F10 exec --no-startup-id spotify;focus
+# bindsym control+mod1+s exec --no-startup-id spotify;focus
+
+#
+# screenshots
+#
+
+# bindsym --release Print exec "scrot ~/Pictures/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"
+# bindsym --release Shift+Print exec "scrot ~/Pictures/$(date --iso-8601='seconds').png -s -e 'xclip -selection c -t image/png < $f'"
+# bindsym --release Control+Shift+Print exec "scrot ~/Pictures/$(date --iso-8601='seconds').png -u -e 'xclip -selection c -t image/png < $f'"
+
+bindsym Print exec --no-startup-id gnome-screenshot
+bindsym Control+Print exec --no-startup-id gnome-screenshot --interactive
+bindsym Control+Shift+Print exec gnome-screenshot -a -c
+
+
+#
+# xbacklight
+#
+
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
+
+
+#
+# audio settings
+#
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
+bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master toggle"
+#https://github.com/acrisci/playerctl/
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
+#bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+#bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+#bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+#bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+

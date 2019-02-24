@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+
+  <action id="com.ubuntu.pkexec.lightdm-gtk-greeter-settings">
+    <message>Authentication is required to run Settings editor for LightDM GTK+ Greeter</message>
+    <message xml:lang="ar">تجب المصادقة لتشغيل محرّر إعدادات مرحّب LightDM GTK+</message>
+    <message xml:lang="ca">Es requereix autenticació per executar l'editor dels ajusts per a LightDM GTK+ Greeter</message>
+    <message xml:lang="cs">Pro spuštění Nastavení přihlašovací obrazovky je vyžadováno ověření</message>
+    <message xml:lang="da">Autentifikation kræves for at køre indstillingsredigering for LightDM GTK+ Greeter</message>
+    <message xml:lang="de">Eine Legitimation ist erforderlich, um die Einstellungsbearbeitung für den LightDM-GTK+Anmeldebildschirm zu starten</message>
+    <message xml:lang="el">Απαιτείται πιστοποίηση για να εκτελέσετε τον επεξεργαστή Ρυθμίσεων του GTK+ Greeter του LightDM</message>
+    <message xml:lang="es">Se requiere autenticación para ejecutar el editor de configuración para la pantalla de bienvenida LightDM GTK+</message>
+    <message xml:lang="fi">Tunnistatuminen vaaditaan LightDM GTK+ -kirjautumisnäkymän asetusmuokkaimen suorittamiseksi</message>
+    <message xml:lang="fr">Authentification nécessaire à l'exécution de l'outil de configuration LightDM GTK+ Greeter</message>
+    <message xml:lang="ja">LightDM GTK+ Greeter の設定エディターを実行するためには、認証が必要です。</message>
+    <message xml:lang="kk">LightDM GTK+ Greeter баптаулар түзеткішін жөнелту үшін аутентификация керек</message>
+    <message xml:lang="lt">Norint vykdyti LightDM GTK+ sveikintojo nustatymų redaktorių, reikalingas tapatybės nustatymas</message>
+    <message xml:lang="nl">Authenticatie is vereist voor het draaien van Instellingenbewerker voor LightDM GTK+ Welkomstscherm</message>
+    <message xml:lang="pl">Autentyfikacja jest wymagana aby uruchomić Edytor ustawień LightDM GTK+ Greeter</message>
+    <message xml:lang="pt">A autenticação é necessária para executar o editor Configurações para o saudador LightDM GTK+</message>
+    <message xml:lang="ru">Для запуска редактора настроек LightDM GTK+ Greeter требуется аутентификация.</message>
+    <message xml:lang="sr">Неопходно је овлашћење ради покретања уредника поставки програма</message>
+    <message xml:lang="zh_CN">运行 LightDM 桌面管理器（GTK+ 界面）设置编辑器需要认证</message>
+    <icon_name>lightdm-gtk-greeter-settings</icon_name>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/lightdm-gtk-greeter-settings</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+
+</policyconfig>

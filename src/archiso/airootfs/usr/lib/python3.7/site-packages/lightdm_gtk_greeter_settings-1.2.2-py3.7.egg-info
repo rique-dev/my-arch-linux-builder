@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: lightdm-gtk-greeter-settings
+Version: 1.2.2
+Summary: Settings editor for LightDM GTK+ Greeter
+Home-page: https://launchpad.net/lightdm-gtk-greeter-settings
+Author: Andrew P.
+Author-email: pan.pav.7c5@gmail.com
+License: GPL-3
+Description: Settings editor for LightDM GTK+ Greeter
+Platform: UNKNOWN
+Requires: gi
+Requires: gi.repository.GLib
+Requires: gi.repository.GObject
+Requires: gi.repository.Gdk
+Requires: gi.repository.GdkPixbuf
+Requires: gi.repository.Gtk
+Requires: gi.repository.Pango
+Provides: lightdm_gtk_greeter_settings
