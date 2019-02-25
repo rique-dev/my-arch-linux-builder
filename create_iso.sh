@@ -2,11 +2,11 @@
 set -e
 
 echo "Deleting the build folder if one exists - takes some time"
-# [ -d ./build/ ] && sudo rm -rf ./build/
+[ -d ./build/ ] && sudo rm -rf ./build/
 
-# sudo mkdir ./build/
+sudo mkdir ./build/
 echo "Coping files and folder to work folder"
-# sudo cp -rf ./src/* ./build/
+sudo cp -rf ./src/* ./build/
 
 echo "Checking if archiso is installed"
 
@@ -80,9 +80,9 @@ fi
 
 echo "Copying files and folder to ./build as root"
 
-# sudo chmod 750 ./build/archiso/airootfs/etc/sudoers.d
-# sudo chmod 750 ./build/archiso/airootfs/etc/polkit-1/rules.d
-# sudo chgrp polkitd ./build/archiso/airootfs/etc/polkit-1/rules.d
+sudo chmod 750 ./build/archiso/airootfs/etc/sudoers.d
+sudo chmod 750 ./build/archiso/airootfs/etc/polkit-1/rules.d
+sudo chgrp polkitd ./build/archiso/airootfs/etc/polkit-1/rules.d
 
 
 cd ./build/archiso
@@ -107,5 +107,5 @@ echo "Phase 5 : Moving the iso to ./iso"
 echo "################################################################## "
 echo
 
-[ -d  ./iso ] || mkdir ./iso
-sudo cp ./build/archiso/out/arcolinux* ./iso
+[ -d  ~/iso ] || mkdir ~/iso
+sudo cp ./build/archiso/out/* ~/iso
