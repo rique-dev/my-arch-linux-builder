@@ -13,5 +13,3 @@ if [ `git status -s -u |grep -c -e "^??\|M\|D"` -gt 0 ]; then
 fi
 
 git push -u origin master > /dev/null
-
-echo "Done."
