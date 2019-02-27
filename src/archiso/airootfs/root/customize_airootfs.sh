@@ -70,9 +70,9 @@ function enableServicesFunc() {
     #systemctl enable winbind.service
     systemctl enable avahi-daemon.service
     systemctl enable avahi-daemon.socket
-#   systemctl enable tlp.service
-#   systemctl enable tlp-sleep.service
-#   systemctl enable vnstat.service
+    #systemctl enable tlp.service
+    #systemctl enable tlp-sleep.service
+    #systemctl enable vnstat.service
 }
 
 
@@ -93,6 +93,9 @@ function fixHibernateFunc() {
 function initkeysFunc() {
     pacman-key --init
     pacman-key --populate archlinux
+
+    # Repo ArcoLinux, thanks Erik Dubois
+    pacman-key --populate arcolinux
     #pacman-key --keyserver hkps://hkps.pool.sks-keyservers.net:443 -r 74F5DE85A506BF64
     #pacman-key --keyserver hkp://pool.sks-keyservers.net:80 -r 74F5DE85A506BF64
     pacman-key --lsign-key 74F5DE85A506BF64
