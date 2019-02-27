@@ -1,12 +1,6 @@
 #!/bin/bash
 set -e
 
-# update
-mirror
-update
-pksyua
-
-
 echo "Deleting the build folder if one exists"
 [ -d ./build/ ] && sudo rm -rf ./build/
 
