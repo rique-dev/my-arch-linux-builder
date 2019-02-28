@@ -62,7 +62,10 @@ function enableServicesFunc() {
 	systemctl enable virtual-machine-check.service
 	systemctl enable reflector.service
 	systemctl enable reflector.timer
-    systemctl enable org.cups.cupsd.service
+
+    # print
+    # systemctl enable org.cups.cupsd.service
+
     systemctl enable bluetooth.service
     systemctl enable ntpd.service
     #systemctl enable smb.service

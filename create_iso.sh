@@ -2,11 +2,11 @@
 set -e
 
 echo "Deleting the build folder if one exists"
-[ -d ./build/ ] && sudo rm -rf ./build/
+[ -d ./.tmp/ ] && sudo rm -rf ./.tmp/
 
 echo "Coping files and folder to work folder"
-sudo mkdir ./build/
-sudo cp -rf ./src/* ./build/
+sudo mkdir ./.tmp/
+sudo cp -rf ./src/* ./.tmp/
 
 echo "Checking if archiso is installed"
 
@@ -78,25 +78,21 @@ fi
 
 echo "Copying files and folder to ./build as root"
 
-sudo chmod 750 ./build/archiso/airootfs/etc/sudoers.d
-sudo chmod 750 ./build/archiso/airootfs/etc/polkit-1/rules.d
-sudo chgrp polkitd ./build/archiso/airootfs/etc/polkit-1/rules.d
+sudo chmod 750 ./.tmp/airootfs/etc/sudoers.d
+sudo chmod 750 ./.tmp/airootfs/etc/polkit-1/rules.d
+sudo chgrp polkitd ./.tmp/airootfs/etc/polkit-1/rules.d
 
-cd ./build/archiso
+cd ./.tmp
 
 echo "In order to build an iso we need to clean your cache"
-
 yes | sudo pacman -Scc
 
 echo "Building the iso"
-
 sudo ./build.sh -v
 
 echo "Moving the iso to ./iso"
-
 [ -d  ~/iso ] || mkdir ~/iso
-sudo cp ./build/archiso/out/* ~/iso
+sudo cp ./.tmp/out/* ~/iso
 
 echo "Deleting the .tmp folder"
-
-[ -d ./build/ ] && sudo rm -rf ./build/
+[ -d ./.tmp/ ] && sudo rm -rf ./.tmp/
