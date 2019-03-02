@@ -961,7 +961,7 @@ format-underline = #0084FF
 [module/jgmenu]
 type = custom/script
 interval = 120
-exec = echo "ArchLinux"
+exec = echo "ArcoLinux"
 click-left = "jgmenu_run >/dev/null 2>&1 &"
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}

@@ -26,7 +26,9 @@ MiscSlimTabs=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=10000
 ScrollingUnlimited=TRUE
-FontName=Monospace 13
+FontName=Ubuntu Light 13
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0.550000
+BackgroundDarkness=0,550000
+MiscShowRelaunchDialog=TRUE
+MiscNewTabAdjacent=FALSE
 

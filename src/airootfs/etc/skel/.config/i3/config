@@ -1,5 +1,17 @@
+# polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
+
+# num lock activated
+exec_always --no-startup-id numlockx on
+
+#if you want transparency on non-focused windows, ...
+exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
+
 #VSCode
 exec --no-startup-id code
+
+# Web browser
+exec --no-startup-id exo-open --launch webbrowser
 
 # thunar file manager
 exec --no-startup-id thunar
@@ -9,11 +21,13 @@ exec --no-startup-id thunar
 
 #exec --no-startup-id spotify
 
-#Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+#
+# system applications
+#
 
-# num lock activated
-exec_always --no-startup-id numlockx on
+exec --no-startup-id xfce4-power-manager &
+# ommitted next line to get super key to bring up the menu in xfce and avoid error then in i3
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #
 # TRAY APPLICATIONS
@@ -40,7 +54,11 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 
 # clipman
-exec --no-startup-id xfce4-clipman# KEY DEFINITIONS TO REMEMBER
+exec --no-startup-id xfce4-clipman
+
+# get the mouse out of the way with unclutter
+exec --no-startup-id unclutter
+# KEY DEFINITIONS TO REMEMBER
 
 # $Mod = WINDOWS key or Super key or Mod4
 # Mod1 = ALT key
@@ -64,10 +82,24 @@ set $left j
 set $right semicolon
 
 
+# my current screen setup
+set $firstMonitor HDMI1
+set $secondMonitor eDP1
+
+
 # orientation for new workspaces
 default_orientation horizontal
 
 font pango:Noto Mono Regular 13
+
+# Settings for I3 next gap git
+# https://github.com/Airblader/i3/tree/gaps-next
+
+for_window [class="^.*"] border pixel 1
+gaps inner 10
+gaps outer 5
+#smart_gaps on
+#smart_borders on
 # rofi
 bindsym mod1+F2 exec --no-startup-id rofi -show run -font "Noto Sans 13"
 
@@ -88,6 +120,39 @@ bindsym $mod+Shift+c exec "sh ~/.config/i3/scripts/reload-i3.sh"
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# not workspace related
+
+bindsym control+mod1+v exec --no-startup-id xfce4-popup-clipman-actions
+
+# terminal
+bindsym $mod+Return exec --no-startup-id termite;focus
+bindsym $mod+KP_Enter exec --no-startup-id termite;focus
+bindsym control+mod1+t exec --no-startup-id termite; focus
+bindsym control+mod1+Return exec --no-startup-id termite; focus
+bindsym control+mod1+KP_Enter exec --no-startup-id termite; focus
+
+#System monitor
+bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
+bindsym control+mod1+Delete exec --no-startup-id xfce4-taskmanager;focus
+
+#settings
+bindsym control+mod1+m exec --no-startup-id xfce4-settings-manager
+
+#catfish
+bindsym control+mod1+c exec --no-startup-id catfish;focus
+
+# pavucontrol
+bindsym control+mod1+u exec --no-startup-id pavucontrol
+
+# xfce-appfinder
+bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
+
+#pamac-manager
+bindsym control+mod1+p exec --no-startup-id pamac-manager
+
+#xkill
+bindsym --release $mod+Escape exec xkill
+
 #
 # i3
 #
@@ -96,9 +161,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+r mode "resize"
 
 ## Moving around in i3
-
-# use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -162,50 +224,6 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-#####################################################################################################################
-#################                                 system applications                               #################
-#####################################################################################################################
-
-exec --no-startup-id xfce4-power-manager &
-# ommitted next line to get super key to bring up the menu in xfce and avoid error then in i3
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-
-#####################################################################################################################
-#################                          applications keyboard shortcuts                          #################
-#####################################################################################################################
-#not workspace related
-
-bindsym control+shift+v exec --no-startup-id xfce4-popup-clipman-actions
-
-# terminal
-bindsym $mod+Return exec --no-startup-id termite;focus
-bindsym $mod+KP_Enter exec --no-startup-id termite;focus
-bindsym control+mod1+t exec --no-startup-id termite; focus
-bindsym control+mod1+Return exec --no-startup-id termite; focus
-bindsym control+mod1+KP_Enter exec --no-startup-id termite; focus
-
-#System monitor
-bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
-bindsym control+mod1+Delete exec --no-startup-id xfce4-taskmanager;focus
-
-#settings
-bindsym control+mod1+m exec --no-startup-id xfce4-settings-manager
-
-#catfish
-bindsym control+mod1+c exec --no-startup-id catfish;focus
-
-# pavucontrol
-bindsym control+mod1+u exec --no-startup-id pavucontrol
-
-# xfce-appfinder
-bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
-
-#pamac-manager
-bindsym control+mod1+p exec --no-startup-id pamac-manager
-
-#xkill
-bindsym --release $mod+Escape exec xkill
-
 #workspace related
 
 #workspace 1 related
@@ -232,7 +250,6 @@ bindsym $mod+F6 exec --no-startup-id vlc;focus
 bindsym $mod+F7 exec --no-startup-id virtualbox;focus
 
 #workspace 8 related
-for_window [class="Thunar"] focus
 bindsym $mod+F8 exec --no-startup-id thunar;focus
 bindsym $mod+Shift+Return exec --no-startup-id thunar;focus
 bindsym $mod+Shift+KP_Enter exec --no-startup-id thunar;focus
@@ -245,12 +262,9 @@ bindsym control+mod1+b exec --no-startup-id thunar;focus
 # bindsym $mod+F10 exec --no-startup-id spotify;focus
 # bindsym control+mod1+s exec --no-startup-id spotify;focus
 
-
-
-
-#####################################################################################################################
-#################                          screenshots                                              #################
-#####################################################################################################################
+#
+# screenshots
+#
 
 # bindsym --release Print exec "scrot ~/Pictures/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"
 # bindsym --release Shift+Print exec "scrot ~/Pictures/$(date --iso-8601='seconds').png -s -e 'xclip -selection c -t image/png < $f'"
@@ -260,56 +274,18 @@ bindsym Print exec --no-startup-id gnome-screenshot
 bindsym Control+Print exec --no-startup-id gnome-screenshot --interactive
 bindsym Control+Shift+Print exec gnome-screenshot -a -c
 
-#####################################################################################################################
-#################                          floating or tiled                                        #################
-#####################################################################################################################
 
-for_window [class="Bleachbit"] floating enable
-for_window [class="Blueberry.py"] floating enable
-for_window [class="Galculator"] floating enable
-for_window [class="Gnome-disks"] floating enable
-for_window [class="^Gnome-font-viewer$"] floating enable
-for_window [class="^Gpick$"] floating enable
-for_window [class="Imagewriter"] floating enable
-for_window [class="Font-manager"] floating enable
-for_window [class="Nitrogen"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Xfce4-appfinder"] floating enable
-for_window [class="Xfce4-settings-manager"] floating enable
-for_window [class="Xfce4-taskmanager"] floating enable
+#
+# xbacklight
+#
+
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
 
-for_window [instance="script-fu"] border normal
-for_window [instance="hardinfo"] floating enable
-for_window [instance="variety"] floating enable
-for_window [instance="pamac-manager"] floating enable
-for_window [instance="nm-connection-editor"] floating enable
-
-
-for_window [title="Copying"] floating enable
-for_window [title="Deleting"] floating enable
-for_window [title="Moving"] floating enable
-for_window [title="^Terminator Preferences$"] floating enable
-
-
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="^Preferences$"] floating enable
-for_window [window_role="setup"] floating enable
-
-#####################################################################################################################
-#################                          give focus to applications                               #################
-#####################################################################################################################
-
-
-for_window [class="Gnome-terminal"] focus
-for_window [class="Termite"] focus
-for_window [class="Terminator"] focus
-
-
-#####################################################################################################################
-#################                          audio settings                                           #################
-#####################################################################################################################
-
+#
+# audio settings
+#
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
@@ -323,68 +299,6 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 #bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 #bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 #bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
-
-
-#####################################################################################################################
-#################                          xbacklight                                               #################
-#####################################################################################################################
-
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
-
-
-
-#####################################################################################################################
-#################                          border control                                           #################
-#####################################################################################################################
-
-
-# Border control
-hide_edge_borders both
-bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
-
-#new_window pixel 1
-new_window normal
-#new_window none
-
-#new_float pixel 1
-new_float normal
-#new_float none
-
-#####################################################################################################################
-#################                          Popups  control                                          #################
-#####################################################################################################################
-
-#Popups during fullscreen mode
-popup_during_fullscreen smart
-
-#####################################################################################################################
-#################                          i3 gaps next                                             #################
-#####################################################################################################################
-
-# Settings for I3 next gap git
-# https://github.com/Airblader/i3/tree/gaps-next
-
-for_window [class="^.*"] border pixel 1
-gaps inner 10
-gaps outer 5
-#smart_gaps on
-#smart_borders on
-
-
-#####################################################################################################################
-#################                          compton of i3wm                                          #################
-#####################################################################################################################
-
-#if you want transparency on non-focused windows, ...
-exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
-
-#####################################################################################################################
-#################                          mouse settings in i3                                     #################
-#####################################################################################################################
-
-# get the mouse out of the way with unclutter
-exec --no-startup-id unclutter
 set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
 
 mode "$mode_system" {
@@ -421,11 +335,78 @@ mode "resize" {
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
-}exec --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1 --auto
+}
+exec --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1 --auto
 
-# my current setup
-set $firstMonitor HDMI1
-set $secondMonitor eDP1
+# Black background with arch blue text and borders
+# grey/white background - blue text for rest
+# Windows decoration colors
+# class                 border  backgr. text    indicator
+client.placeholder      #242424 #242424 #242424
+client.background       #242424 #242424 #242424
+client.focused          #4A4A4A #4A4A4A #e5e5e5 #4A4A4A
+client.unfocused        #4A4A4A #222222 #aaaaaa #222222
+client.focused_inactive #4A4A4A #222222 #a9a9a9 #222222
+client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
+# floating
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+for_window [class="Bleachbit"] floating enable
+for_window [class="Blueberry.py"] floating enable
+for_window [class="Galculator"] floating enable
+for_window [class="Gnome-disks"] floating enable
+for_window [class="^Gnome-font-viewer$"] floating enable
+for_window [class="^Gpick$"] floating enable
+for_window [class="Imagewriter"] floating enable
+for_window [class="Font-manager"] floating enable
+for_window [class="Nitrogen"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Xfce4-appfinder"] floating enable
+for_window [class="Xfce4-settings-manager"] floating enable
+for_window [class="Xfce4-taskmanager"] floating enable
+
+
+for_window [instance="script-fu"] border normal
+for_window [instance="hardinfo"] floating enable
+for_window [instance="variety"] floating enable
+for_window [instance="pamac-manager"] floating enable
+for_window [instance="nm-connection-editor"] floating enable
+
+
+for_window [title="Copying"] floating enable
+for_window [title="Deleting"] floating enable
+for_window [title="Moving"] floating enable
+for_window [title="^Terminator Preferences$"] floating enable
+
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="^Preferences$"] floating enable
+for_window [window_role="setup"] floating enable
+
+# focus
+
+for_window [class="Gnome-terminal"] focus
+for_window [class="Termite"] focus
+for_window [class="Terminator"] focus
+for_window [class="Thunar"] focus
+
+
+# Border control
+hide_edge_borders both
+
+#new_window pixel 1
+new_window normal
+#new_window none
+
+#new_float pixel 1
+new_float normal
+#new_float none
+
+
+#Popups during fullscreen mode
+popup_during_fullscreen smart
 #assign applications to workspaces
 
 # 1

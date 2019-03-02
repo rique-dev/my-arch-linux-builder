@@ -1,4 +1,3 @@
-
 # rofi
 bindsym mod1+F2 exec --no-startup-id rofi -show run -font "Noto Sans 13"
 
@@ -19,9 +18,9 @@ bindsym $mod+Shift+c exec "sh ~/.config/i3/scripts/reload-i3.sh"
 # kill focused window
 bindsym $mod+Shift+q kill
 
-#not workspace related
+# not workspace related
 
-bindsym control+shift+v exec --no-startup-id xfce4-popup-clipman-actions
+bindsym control+mod1+v exec --no-startup-id xfce4-popup-clipman-actions
 
 # terminal
 bindsym $mod+Return exec --no-startup-id termite;focus
@@ -198,4 +197,3 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 #bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 #bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 #bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
-

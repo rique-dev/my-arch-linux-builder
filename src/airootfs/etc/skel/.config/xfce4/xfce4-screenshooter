@@ -1,6 +1,10 @@
-delay=1
-region=1
+delay=0
+region=3
 action=1
 show_mouse=0
-title=ArchLinux
+title=ArcoLinux
 timestamp=TRUE
+screenshot_dir=file:/home/henryqrm/Pictures
+app=feh
+last_user=
+

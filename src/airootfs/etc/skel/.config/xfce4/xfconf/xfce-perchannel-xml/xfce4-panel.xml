@@ -10,12 +10,10 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="30"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="7"/>
         <value type="int" value="3"/>
         <value type="int" value="15"/>
         <value type="int" value="4"/>
         <value type="int" value="6"/>
-        <value type="int" value="8"/>
         <value type="int" value="5"/>
         <value type="int" value="2"/>
       </property>
@@ -74,6 +72,16 @@
     <property name="clipman" type="empty">
       <property name="tweaks" type="empty">
         <property name="never-confirm-history-clear" type="bool" value="true"/>
+        <property name="paste-on-activate" type="uint" value="2"/>
+        <property name="popup-at-pointer" type="bool" value="true"/>
+        <property name="reorder-items" type="bool" value="true"/>
+        <property name="reverse-menu-order" type="bool" value="false"/>
+      </property>
+      <property name="settings" type="empty">
+        <property name="enable-actions" type="bool" value="false"/>
+        <property name="show-qr-code" type="bool" value="false"/>
+        <property name="add-primary-clipboard" type="bool" value="false"/>
+        <property name="max-texts-in-history" type="uint" value="10"/>
       </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">

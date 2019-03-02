@@ -1,6 +1,6 @@
-#######################
-##       Base        ##
-#######################
+#
+# Base
+#
 
 #archiso
 arch-install-scripts
@@ -201,9 +201,9 @@ libopenraw
 poppler-glib
 poppler-qt5
 
-###########################
-#Software from Arch repo's
-###########################
+#
+# Software from Arch repo's
+#
 
 #applications
 catfish
@@ -220,9 +220,6 @@ qbittorrent
 simplescreenrecorder
 termite
 vlc
-
-#cursors
-xcursor-simpleandsoft
 
 #fonts
 adobe-source-sans-pro-fonts
@@ -243,8 +240,8 @@ ttf-ubuntu-font-family
 #i3blocks
 
 #icons
-arc-icon-theme
-gnome-icon-theme
+#arc-icon-theme
+#gnome-icon-theme
 
 #lightdm
 accountsservice
@@ -265,10 +262,10 @@ lxrandr
 gtk-engine-murrine
 
 #themes
-adapta-gtk-theme
-arc-gtk-theme
-kvantum-qt5
-kvantum-theme-arc
+#adapta-gtk-theme
+#arc-gtk-theme
+#kvantum-qt5
+#kvantum-theme-arc
 numix-gtk-theme
 
 #utilities
@@ -279,7 +276,7 @@ baobab
 catfish
 #cmatrix
 #cool-retro-term
-dconf-editor
+#dconf-editor
 dialog
 dmidecode
 evince
@@ -351,13 +348,15 @@ zsh-syntax-highlighting
 #############################
 
 #applications
+vivaldi
+vivaldi-codecs-ffmpeg-extra-bin
 
 #cursors
-breeze-cursors-lh
-breeze-obsidian-cursor-theme
-oxy-neon
+#breeze-cursors-lh
+#breeze-obsidian-cursor-theme
+#oxy-neon
 xcursor-breeze
-xcursor-vanilla-dmz-aa
+#xcursor-vanilla-dmz-aa
 
 #fonts
 ttf-font-awesome
@@ -365,19 +364,20 @@ ttf-ms-fonts
 
 #i3
 i3-gaps-next-git
+polybar
 
 #icons
-faba-icon-theme
-halo-icons-git
-moka-icon-theme
+#faba-icon-theme
+#halo-icons-git
+#moka-icon-theme
 numix-circle-arc-icons-git
 numix-icon-theme-git
 numix-circle-icon-theme-git
-paper-icon-theme
-papirus-icon-theme
-sardi-icons
-surfn-icons-git
-zafiro-icon-theme
+#paper-icon-theme
+#papirus-icon-theme
+#sardi-icons
+#surfn-icons-git
+#zafiro-icon-theme
 
 #network
 #b43-firmware
@@ -407,16 +407,16 @@ mintstick-git
 neofetch
 oh-my-zsh-git
 #oomox
-pamac-aur
+#pamac-aur
 pulseaudio-equalizer-ladspa
 python-pywal
 #python-pystache
 tmux
-trizen
+#trizen
 urxvt-perls
 urxvt-resize-font-git
 wttr
-yad
+#yad
 yay-bin
 
 exo

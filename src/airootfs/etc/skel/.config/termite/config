@@ -45,6 +45,7 @@ urgent_on_bell = true
 
 [colors]
 # https://critical.ch/xterm/
+#dracula theme adapted by Erik Dubois
 background = rgba(40, 42, 54, 0.8)
 
 # special

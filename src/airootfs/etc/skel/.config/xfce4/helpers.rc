@@ -1,5 +1,4 @@
 FileManager=Thunar
 TerminalEmulator=custom-TerminalEmulator
-WebBrowser=chromium
-MailReader=evolution
+WebBrowser=google-chrome
 
