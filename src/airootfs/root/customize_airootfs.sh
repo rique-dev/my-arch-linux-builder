@@ -7,7 +7,7 @@ function umaskFunc() {
 
 function localeGenFunc() {
     # Set locales
-    sed -i 's/^#\(pt_BR\.UTF-8\)/\1/' /etc/locale.gen
+    sed -i 's/^#\(en_US\.UTF-8\)/\1/' /etc/locale.gen
     locale-gen
 }
 
@@ -27,7 +27,7 @@ function configRootUserFunc() {
 function editOrCreateConfigFilesFunc () {
 
     # Locale
-    echo "LANG=pt_BR.UTF-8" > /etc/locale.conf
+    echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
     sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
     sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist

@@ -15,3 +15,6 @@ if [systemd-detect-virt = "oracle"];
 	/usr/bin/VBoxClient-all
 fi
 
+# Load i3
+
+sh $HOME/.config/i3/scripts/init.sh
