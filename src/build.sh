@@ -3,10 +3,10 @@
 set -e -u
 
 iso_name=henryqrm-archlinux-i3
-iso_label="henryqrm-v0.1-x86_64"
+iso_label="henryqrm-x86_64"
 iso_publisher="HenryQRM <https://www.archlinux.org>"
 iso_application="HenryQRM Live/Rescue CD"
-iso_version="v1.0"
+iso_version="v0.1"
 install_dir=arch
 work_dir=work
 out_dir=out
