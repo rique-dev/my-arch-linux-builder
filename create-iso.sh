@@ -29,9 +29,9 @@ echo "Building the iso"
 sudo ./build.sh -v
 
 echo "Moving the iso to ./iso"
-[ -d  ../iso ] || mkdir ../iso
-sudo cp ./out/* ../iso
+cd ..
+[ -d  ./iso ] && mkdir ./iso
+sudo cp ./.tmp/out/* ./iso/
 
 echo "Deleting the .tmp folder"
-cd ..
 [ -d ./.tmp/ ] && sudo rm -rf ./.tmp/
