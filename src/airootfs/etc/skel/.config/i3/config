@@ -101,7 +101,7 @@ gaps outer 5
 #smart_gaps on
 #smart_borders on
 # rofi
-bindsym mod1+F2 exec --no-startup-id rofi -show run -font "Noto Sans 13"
+bindsym mod1+F2 exec --no-startup-id rofi -show run -font "Ubuntu 13"
 
 # xfce-appfinder
 bindsym mod1+F3 exec --no-startup-id xfce4-appfinder

@@ -113,10 +113,10 @@ module-margin-left = 3
 module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
+font-0 = "Ubuntu:size=10;0"
 font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
+font-2 = "Ubuntu:size=10;0"
+font-3 = "Ubuntu Mono:size=10;0"
 
 modules-left = i3 xwindow
 modules-center = kernel
@@ -204,10 +204,10 @@ module-margin-right = 3
 enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
+font-0 = "Ubuntu:size=10;0"
 font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
+font-2 = "Ubuntu:size=10;0"
+font-3 = "Ubuntu Mono:size=10;0"
 
 modules-left = ewmh xwindow
 modules-center = release kernel
@@ -266,10 +266,10 @@ module-margin-right = 3
 enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
+font-0 = "Ubuntu:size=10;0"
 font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
+font-2 = "Ubuntu:size=10;0"
+font-3 = "Ubuntu Mono:size=10;0"
 
 modules-left = spotify1
 modules-center = networkspeedup networkspeeddown
@@ -330,10 +330,10 @@ module-margin-left = 3
 module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
+font-0 = "Ubuntu:size=10;0"
 font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
+font-2 = "Ubuntu:size=10;0"
+font-3 = "Ubuntu Mono:size=10;0"
 
 modules-left = bspwm xwindow
 modules-center = kernel
@@ -396,10 +396,10 @@ module-margin-right = 3
 enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
+font-0 = "Ubuntu:size=10;0"
 font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
+font-2 = "Ubuntu:size=10;0"
+font-3 = "Ubuntu Mono:size=10;0"
 
 modules-left = ewmh
 modules-center = kernel
@@ -961,7 +961,7 @@ format-underline = #0084FF
 [module/jgmenu]
 type = custom/script
 interval = 120
-exec = echo "ArcoLinux"
+exec = echo "ArchLinux"
 click-left = "jgmenu_run >/dev/null 2>&1 &"
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
