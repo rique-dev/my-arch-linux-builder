@@ -178,7 +178,6 @@ udisks2
 xdg-user-dirs
 
 #printers
-
 #cups
 #cups-filters
 #cups-pdf
@@ -191,6 +190,13 @@ xdg-user-dirs
 #hplip
 #splix
 #system-config-printer
+
+#printer extra for hplip
+#pyqt5-common
+#python-pillow
+#python-pip
+#python-pyqt5
+#python-reportlab
 
 #tumbler
 tumbler
@@ -214,7 +220,7 @@ gsimplecal
 guvcview
 imagemagick
 meld
-nitrogen
+#nitrogen
 numlockx
 qbittorrent
 simplescreenrecorder
@@ -226,12 +232,12 @@ adobe-source-sans-pro-fonts
 awesome-terminal-fonts
 #cantarell-fonts
 noto-fonts
-terminus-font
-ttf-bitstream-vera
+#terminus-font
+#ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
-ttf-inconsolata
-ttf-liberation
+#ttf-inconsolata
+#ttf-liberation
 ttf-roboto
 ttf-ubuntu-font-family
 
@@ -270,15 +276,15 @@ numix-gtk-theme
 
 #utilities
 arandr
-asciinema
-bash-completion
+#asciinema
+#bash-completion
 baobab
 catfish
 #cmatrix
 #cool-retro-term
 #dconf-editor
 dialog
-dmidecode
+#dmidecode
 evince
 expac
 file-roller
@@ -292,9 +298,9 @@ gnome-screenshot
 #gnome-software-packagekit-plugin
 gparted
 gpick
-gtop
+#gtop
 hardinfo
-hddtemp
+#hddtemp
 htop
 #hunspell
 #hunspell-en
@@ -318,9 +324,9 @@ qt5ct
 qt5-styleplugins
 #qt5-tools
 qt5-webkit
-powertop
+#powertop
 reflector
-#redshift
+redshift
 rofi
 #tlp
 #ufw
@@ -370,7 +376,7 @@ polybar
 #faba-icon-theme
 #halo-icons-git
 #moka-icon-theme
-numix-circle-arc-icons-git
+#numix-circle-arc-icons-git
 numix-icon-theme-git
 numix-circle-icon-theme-git
 #paper-icon-theme
@@ -392,7 +398,7 @@ numix-circle-icon-theme-git
 mkinitcpio-openswap
 
 #utilities
-aurvote-git
+#aurvote-git
 #conky-lua-archers
 downgrade
 font-manager
@@ -404,18 +410,18 @@ inxi
 #menulibre
 mintstick-git
 #mugshot
-neofetch
+#neofetch
 oh-my-zsh-git
 #oomox
-#pamac-aur
+pamac-aur
 pulseaudio-equalizer-ladspa
 python-pywal
 #python-pystache
 tmux
 #trizen
-urxvt-perls
-urxvt-resize-font-git
-wttr
+#urxvt-perls
+#urxvt-resize-font-git
+#wttr
 #yad
 yay-bin
 
