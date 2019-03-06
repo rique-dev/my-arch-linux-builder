@@ -20,18 +20,15 @@ sudo chmod 750 ./.tmp/airootfs/etc/sudoers.d
 sudo chmod 750 ./.tmp/airootfs/etc/polkit-1/rules.d
 sudo chgrp polkitd ./.tmp/airootfs/etc/polkit-1/rules.d
 
-cd ./.tmp
-
 echo "In order to build an iso we need to clean your cache"
 yes | sudo pacman -Scc
 
 echo "Building the iso"
-sudo ./build.sh -v
+sudo ./.tmp/build.sh -v
 
 echo "Moving the iso to ./iso"
-cd ..
-[ -d  ./iso ] && mkdir ./iso
-sudo cp ./.tmp/out/* ./iso/
+[ -d  ./iso ] || mkdir ./iso
+cp -vRf ./.tmp/out/* ./iso/
 
 echo "Deleting the .tmp folder"
 [ -d ./.tmp/ ] && sudo rm -rf ./.tmp/
