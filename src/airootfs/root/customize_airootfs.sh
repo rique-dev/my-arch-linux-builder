@@ -20,6 +20,7 @@ function setTimeZoneAndClockFunc() {
 
 function configRootUserFunc() {
     usermod -s /usr/bin/zsh root
+    chsh -s /usr/bin/zsh root
     cp -aT /etc/skel/ /root/
     chmod 750 /root
 }
@@ -36,7 +37,7 @@ function editOrCreateConfigFilesFunc () {
 
 function createLiveUserFunc () {
 	# add liveuser
-    useradd -m liveuser -u 500 -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /bin/bash
+    useradd -m liveuser -u 500 -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /bin/zsh
     chown -R liveuser:users /home/liveuser
 
     #enable autologin

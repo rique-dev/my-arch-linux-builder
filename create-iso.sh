@@ -24,9 +24,11 @@ echo "In order to build an iso we need to clean your cache"
 yes | sudo pacman -Scc
 
 echo "Building the iso"
-sudo ./.tmp/build.sh -v
+cd ./.tmp
+sudo ./build.sh -v
 
 echo "Moving the iso to ./iso"
+cd ..
 [ -d  ./iso ] || mkdir ./iso
 cp -vRf ./.tmp/out/* ./iso/
 

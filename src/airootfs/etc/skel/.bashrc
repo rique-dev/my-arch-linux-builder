@@ -70,7 +70,7 @@ alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 #improve png
-alias fixpng="find . -type f -name "*.png" -exec convert {} -strip {} \;"
+alias fixpng="find . -type f -name \"*.png\" -exec convert {} -strip {} \;"
 
 #add new fonts
 alias fc='sudo fc-cache -fv'
@@ -80,18 +80,11 @@ alias skel='cp -rf /etc/skel/* ~'
 #backup contents of /etc/skel to hidden backup folder in home/user
 alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
-#copy bashrc-latest over on bashrc - cb= copy bash
-alias cb="cp ~/.bashrc-latest ~/.bashrc && source ~/.bashrc"
-
-#quickly kill conkies
-alias kc='killall conky'
-
 #hardware info --short
 alias hw="hwinfo --short"
 
 #skip integrity check
 alias yayskip='yay -S --mflags --skipinteg'
-alias trizenskip='trizen -S --skipinteg'
 
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
@@ -104,14 +97,6 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Public"
-
-#shopt
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
 
 #youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
@@ -134,6 +119,32 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 #create a file called .bashrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
-[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+alias packages-size="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
 
-neofetch
+#
+# Git
+#
+
+## core
+alias g-sync="chmod +x ./git-sync.sh && ./git-sync.sh"
+alias g-status="git status"
+alias g-undo="git reset HEAD~1 --mixed"
+# clone repository
+alias g-cl="git clone"
+# add all files
+alias g-a="git add -A ."
+alias g-c="git commit -m"
+alias g-c-amend="git commit -a --amend"
+alias g-ac="g-a && g-c $1"
+alias g-r="git rebase"
+alias g-r-continue="git rebase --continue"
+alias g-r-continue="git rebase --continue"
+alias g-m="git merge"
+
+alias g-master="git checkout master && git pull"
+
+## branch
+
+alias g-b-rename="git branch -m"
+alias g-b-list="git branch -a | grep ."
+alias g-b-change="git checkout -d"
