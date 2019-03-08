@@ -20,7 +20,6 @@ function setTimeZoneAndClockFunc() {
 
 function configRootUserFunc() {
     usermod -s /usr/bin/zsh root
-    chsh -s /usr/bin/zsh root
     cp -aT /etc/skel/ /root/
     chmod 750 /root
 }
