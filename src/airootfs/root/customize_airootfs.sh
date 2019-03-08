@@ -55,6 +55,16 @@ function setDefaultsFunc() {
     echo "EDITOR=${_EDITOR}" >> /etc/profile
 }
 
+function fixHavegedFunc(){
+    systemctl enable haveged
+}
+
+function fixPermissionsFunc() {
+    chmod 750 /etc/sudoers.d
+    chmod 750 /etc/polkit-1/rules.d
+    chgrp polkitd /etc/polkit-1/rules.d
+}
+
 function enableServicesFunc() {
     systemctl set-default multi-user.target
 	systemctl enable lightdm.service
@@ -87,6 +97,14 @@ function fixWifiFunc() {
     su -c 'echo "wifi.scan-rand-mac-address=no" >> /etc/NetworkManager/NetworkManager.conf'
 }
 
+function fixGeoclueRedshift() {
+    pathToGeoclueConf="/etc/geoclue/geoclue.conf"
+    echo '' >> $pathToGeoclueConf
+    echo '[redshift]' >> $pathToGeoclueConf
+    echo 'allowed=true' >> $pathToGeoclueConf
+    echo 'system=false' >> $pathToGeoclueConf
+    echo 'users=' >> $pathToGeoclueConf
+}
 
 function fixHibernateFunc() {
     sed -i 's/#\(HandleSuspendKey=\)suspend/\1ignore/' /etc/systemd/logind.conf
@@ -100,6 +118,7 @@ function initkeysFunc() {
 
     # Repo ArcoLinux, thanks Erik Dubois
     pacman-key --populate arcolinux
+
     #pacman-key --keyserver hkps://hkps.pool.sks-keyservers.net:443 -r 74F5DE85A506BF64
     #pacman-key --keyserver hkp://pool.sks-keyservers.net:80 -r 74F5DE85A506BF64
     pacman-key --lsign-key 74F5DE85A506BF64
@@ -107,7 +126,7 @@ function initkeysFunc() {
 }
 
 function getNewMirrorCleanAndUpgrade() {
-    reflector --protocol https --latest 50 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
+    reflector -f 30 -l 30 --number 10 --save /etc/pacman.d/mirrorlist
     pacman -Sc --noconfirm
     pacman -Syyu --noconfirm
 }
@@ -126,8 +145,14 @@ createLiveUserFunc
 echo "#####   Function createLiveUserFunc done    #####"
 setDefaultsFunc
 echo "#####   Function setDefaultsFunc done    #####"
+fixHavegedFunc
+echo "#####   Function fixHavegedFunc done    #####"
+fixPermissionsFunc
+echo "#####   Function fixPermissionsFunc done    #####"
 enableServicesFunc
 echo "#####   Function enableServicesFunc done    #####"
+fixGeoclueRedshift
+echo "#####   Function fixGeoclueRedshift done    #####"
 fixWifiFunc
 echo "#####   Function fixWifiFunc done    #####"
 fixHibernateFunc
