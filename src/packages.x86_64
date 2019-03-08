@@ -2,9 +2,7 @@
 # Base
 #
 
-#archiso
 arch-install-scripts
-#b43-fwcutter
 broadcom-wl
 btrfs-progs
 clonezilla
@@ -290,7 +288,6 @@ expac
 file-roller
 #filezilla
 git
-gksu
 gnome-disk-utility
 gnome-keyring
 gnome-screenshot
@@ -353,37 +350,11 @@ zsh-syntax-highlighting
 # 3th party
 #############################
 
-#applications
-vivaldi
-vivaldi-codecs-ffmpeg-extra-bin
-
-#cursors
-#breeze-cursors-lh
-#breeze-obsidian-cursor-theme
-#oxy-neon
-xcursor-breeze
-#xcursor-vanilla-dmz-aa
 
 #fonts
 ttf-font-awesome
-ttf-ms-fonts
 
-#i3
-i3-gaps-next-git
-polybar
 
-#icons
-#faba-icon-theme
-#halo-icons-git
-#moka-icon-theme
-#numix-circle-arc-icons-git
-numix-icon-theme-git
-numix-circle-icon-theme-git
-#paper-icon-theme
-#papirus-icon-theme
-#sardi-icons
-#surfn-icons-git
-#zafiro-icon-theme
 
 #network
 #b43-firmware
@@ -394,26 +365,12 @@ numix-circle-icon-theme-git
 #obmenu-generator
 #perl-linux-desktopfiles
 
-#tools
-mkinitcpio-openswap
-
 #utilities
-#aurvote-git
-#conky-lua-archers
-downgrade
-font-manager
-glxinfo
-#google-talkplugin
 grub-customizer
-hardcode-fixer-git
-inxi
 #menulibre
-mintstick-git
 #mugshot
 #neofetch
-oh-my-zsh-git
 #oomox
-pamac-aur
 pulseaudio-equalizer-ladspa
 python-pywal
 #python-pystache
@@ -423,7 +380,19 @@ tmux
 #urxvt-resize-font-git
 #wttr
 #yad
-yay-bin
+python-pip
+code
+yarn
+npm
+unclutter
+chromium
+firefox-developer-edition
+nodejs
+virtualbox
+virtualbox-guest-modules-arch
+virtualbox-host-modules-arch
+docker
+docker-compose
 
 exo
 garcon
@@ -450,10 +419,7 @@ xfce4-screenshooter
 xfce4-taskmanager
 xfce4-clipman-plugin
 
-
 #Needed for Calamares installer
-calamares
-ckbcomp
 networkmanager
 upower
 kcoreaddons
@@ -469,9 +435,28 @@ plasma-framework
 hwinfo
 qt5-xmlpatterns
 
-##
-# python
-##
+#
+# arcolinux_repo_iso
+#
+#Needed for Calamares installer
+calamares
+ckbcomp
 
-python-pip
-code
+
+#libgksu
+#python2-pyparted
+#pythonqt
+gksu
+hardcode-fixer-git
+i3-gaps-next-git
+mintstick-git
+mkinitcpio-openswap
+numix-circle-icon-theme-git
+numix-icon-theme-git
+oh-my-zsh-git
+#important
+pamac-aur
+polybar
+ttf-ms-fonts
+xcursor-breeze
+yay-bin

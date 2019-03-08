@@ -55,12 +55,13 @@ alias userlist="cut -d: -f1 /etc/passwd"
 alias merge="xrdb -merge ~/.Xresources"
 
 # Aliases for software managment
-# pacman or pm
-alias pacman='sudo pacman --color auto'
-alias update='sudo pacman -Syyu'
+# pacman
+alias p='sudo pacman --noconfirm --color auto -S'
+alias pu='sudo pacman -Syyu --noconfirm'
+alias y="yay --noconfirm -S"
+alias yu="yay -Syu --noconfirm"
 
-# yay as aur helper - updates everything
-alias pksyua="yay -Syu --noconfirm"
+alias update="pu && yu"
 
 #ps
 alias ps="ps auxf"
@@ -116,9 +117,6 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -100"
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
-#create a file called .bashrc-personal and put all your personal aliases
-#in there. They will not be overwritten by skel.
-
 alias packages-size="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
 
 #
@@ -126,16 +124,15 @@ alias packages-size="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print 
 #
 
 ## core
-alias g-sync="chmod +x ./git-sync.sh && ./git-sync.sh"
+alias g-sync="[ -f ./git-sync.sh ] && chmod +x ./git-sync.sh && ./git-sync.sh || [ -f ./.git-sync.sh ] && chmod +x ./.git-sync.sh && ./.git-sync.sh"
 alias g-status="git status"
 alias g-undo="git reset HEAD~1 --mixed"
 # clone repository
-alias g-cl="git clone"
+alias g-c="git clone"
 # add all files
 alias g-a="git add -A ."
-alias g-c="git commit -m"
+alias g-cm="git commit -m"
 alias g-c-amend="git commit -a --amend"
-alias g-ac="g-a && g-c $1"
 alias g-r="git rebase"
 alias g-r-continue="git rebase --continue"
 alias g-r-continue="git rebase --continue"
@@ -148,3 +145,9 @@ alias g-master="git checkout master && git pull"
 alias g-b-rename="git branch -m"
 alias g-b-list="git branch -a | grep ."
 alias g-b-change="git checkout -d"
+
+
+## submodules
+alias gsa="git submodule add"
+
+alias postinstall='sh -c "$(wget https://raw.githubusercontent.com/henryqrm/my-dotfiles/master/.postinstall.sh -O -)"'
