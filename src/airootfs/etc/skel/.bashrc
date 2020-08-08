@@ -24,8 +24,8 @@ fi
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -la'
-alias l='ls' 					
-alias l.="ls -A | egrep '^\.'"      
+alias l='ls'
+alias l.="ls -A | egrep '^\.'"
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -71,7 +71,7 @@ alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 #improve png
-alias fixpng="find . -type f -name \"*.png\" -exec convert {} -strip {} \;"
+alias fixpng="find . -type f -name "*.png" -exec convert {} -strip {} \;"
 
 #add new fonts
 alias fc='sudo fc-cache -fv'
@@ -90,7 +90,7 @@ alias yayskip='yay -S --mflags --skipinteg'
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
-#get fastest mirrors in your neighborhood 
+#get fastest mirrors in your neighborhood
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"

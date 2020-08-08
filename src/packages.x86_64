@@ -140,7 +140,7 @@ blueberry
 bluez
 bluez-libs
 bluez-utils
-bluez-firmware
+#bluez-firmware
 pulseaudio-bluetooth
 
 #network
@@ -212,13 +212,11 @@ poppler-qt5
 #applications
 catfish
 compton
-deadbeef
 galculator
 gsimplecal
 guvcview
 imagemagick
 meld
-#nitrogen
 numlockx
 qbittorrent
 simplescreenrecorder
@@ -230,22 +228,10 @@ adobe-source-sans-pro-fonts
 awesome-terminal-fonts
 #cantarell-fonts
 noto-fonts
-#terminus-font
-#ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
-#ttf-inconsolata
-#ttf-liberation
 ttf-roboto
 ttf-ubuntu-font-family
-
-#i3wm
-#i3status
-#i3blocks
-
-#icons
-#arc-icon-theme
-#gnome-icon-theme
 
 #lightdm
 accountsservice
@@ -253,9 +239,9 @@ lightdm
 
 
 #lx-applications
-#lxappearance
-lxappearance-gtk3
-#lxappearance-obconf
+lxappearance
+#lxappearance-gtk3
+lxappearance-obconf
 #lxappearance-obconf-gtk3
 lxrandr
 
@@ -275,7 +261,7 @@ numix-gtk-theme
 #utilities
 arandr
 #asciinema
-#bash-completion
+bash-completion
 baobab
 catfish
 #cmatrix
@@ -326,18 +312,17 @@ reflector
 redshift
 rofi
 #tlp
-#ufw
-#gufw
+tree
+ufw
+gufw
 unace
 unrar
 unzip
-#vnstat
 w3m
 webkit2gtk
 wget
 wmctrl
 xapps
-#xcape
 xdg-desktop-portal-gtk
 youtube-dl
 zenity
@@ -349,7 +334,6 @@ zsh-syntax-highlighting
 #############################
 # 3th party
 #############################
-
 
 #fonts
 ttf-font-awesome
@@ -367,19 +351,11 @@ ttf-font-awesome
 
 #utilities
 grub-customizer
-#menulibre
-#mugshot
-#neofetch
 #oomox
 pulseaudio-equalizer-ladspa
 python-pywal
-#python-pystache
+screenkey
 tmux
-#trizen
-#urxvt-perls
-#urxvt-resize-font-git
-#wttr
-#yad
 python-pip
 code
 yarn
@@ -414,10 +390,37 @@ xfwm4
 ristretto
 thunar-archive-plugin
 thunar-media-tags-plugin
-xfce4-notifyd
-xfce4-screenshooter
-xfce4-taskmanager
+#xfce4-artwork
+xfce4-battery-plugin
 xfce4-clipman-plugin
+xfce4-cpufreq-plugin
+xfce4-cpugraph-plugin
+xfce4-datetime-plugin
+xfce4-dict
+xfce4-diskperf-plugin
+xfce4-eyes-plugin
+xfce4-fsguard-plugin
+xfce4-genmon-plugin
+xfce4-mailwatch-plugin
+xfce4-mount-plugin
+xfce4-mpc-plugin
+xfce4-netload-plugin
+xfce4-notes-plugin
+xfce4-notifyd
+xfce4-pulseaudio-plugin
+xfce4-screenshooter
+xfce4-sensors-plugin
+xfce4-smartbookmark-plugin
+xfce4-systemload-plugin
+xfce4-taskmanager
+xfce4-time-out-plugin
+xfce4-timer-plugin
+xfce4-verve-plugin
+xfce4-wavelan-plugin
+xfce4-weather-plugin
+xfce4-whiskermenu-plugin
+xfce4-xkb-plugin
+xfce4-panel-profiles
 
 #Needed for Calamares installer
 networkmanager
@@ -443,9 +446,6 @@ calamares
 ckbcomp
 
 
-#libgksu
-#python2-pyparted
-#pythonqt
 gksu
 hardcode-fixer-git
 i3-gaps-next-git
